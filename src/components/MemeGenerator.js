@@ -4,7 +4,10 @@ class MemeGenerator extends Component {
   constructor() {
     super()
     this.state = {
-
+      topText: "",
+      bottomText: "",
+      randomImage: "",
+      allMemeImages: []
     }
   }
 
