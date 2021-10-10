@@ -45,8 +45,10 @@ class MemeGenerator extends Component {
   handleSubmit(event) {
     event.preventDefault()
     const array = this.state.allMemeImages
-    const selectedImage = array[Math.floor(Math.random() * array.length)]
-    this.setState({ randomImage: selectedImage.url })
+    const selectedImage = array[Math.floor(Math.random() * array.length)];
+    this.setState({
+        randomImage: selectedImage.url
+    })
   }
 
   render() {
@@ -77,11 +79,14 @@ class MemeGenerator extends Component {
           <br />
           
           <button>Generate</button>
-          
-
-      </form>
-        
-        <p>{this.state.error}</p>
+        </form>
+        <div className="meme">
+          { this.state.error ?  <p>{this.state.error}</p> : null}
+          <img src={this.state.randomImage} alt="" />
+          <h2 className="top">{this.state.topText}</h2>
+          <h2 className="bottom">{this.state.bottomText}</h2>
+        </div>
+      
       </div>
     )
   }
