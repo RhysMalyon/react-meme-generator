@@ -10,6 +10,8 @@ class MemeGenerator extends Component {
       allMemeImages: [],
       error: ""
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -38,6 +40,13 @@ class MemeGenerator extends Component {
     this.setState({
       [name]: value
     })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    const array = this.state.allMemeImages
+    const selectedImage = array[Math.floor(Math.random() * array.length)]
+    this.setState({ randomImage: selectedImage })
   }
 
   render() {
