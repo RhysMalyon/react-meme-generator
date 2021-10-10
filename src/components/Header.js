@@ -1,7 +1,9 @@
 import React from 'react'
 
 function Header() {
-  // Insert code
+  return (
+    <h1>HEADER</h1>
+  )
 }
 
 export default Header
