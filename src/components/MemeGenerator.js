@@ -46,7 +46,7 @@ class MemeGenerator extends Component {
     event.preventDefault()
     const array = this.state.allMemeImages
     const selectedImage = array[Math.floor(Math.random() * array.length)]
-    this.setState({ randomImage: selectedImage })
+    this.setState({ randomImage: selectedImage.url })
   }
 
   render() {
