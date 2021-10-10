@@ -22,12 +22,22 @@ class MemeGenerator extends Component {
       })
       .then(response => {
         const { memes } = response.data
-        this.setState({ allMemeImages: memes })
+        this.setState({
+          allMemeImages: memes,
+          error: ""
+        })
       })
       .catch(err => {
         const errorMessage = err.toString()
         this.setState({ error: errorMessage })
       })
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target
+    this.setState({
+      [name]: value
+    })
   }
 
   render() {
